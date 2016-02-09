@@ -1,0 +1,16 @@
+<div class = "well" id="friendlist">
+	<h3> BLOCK Approve List </h3><br>
+	<div align = "center"><input type="text" ng-model="q" placeholder="Filter Request..." style="width:70%"></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="ppl in ppls | filter:q as results" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{ppl.name}} {{ppl.uid}} </a> </strong>
+		      <div align = "right">
+		      <input type="submit" class= "page-scroll btn btn-md" name="frequest" ng-click ="approvereq(ppl.uid)" value="Approve1"/>
+		      </div></p>
+		    </li>
+		    <li class="friend-repeat" ng-if="results.length == 0">
+		      <strong>--EMPTY---</strong>
+		    </li>
+	  	</ul>
+</div>

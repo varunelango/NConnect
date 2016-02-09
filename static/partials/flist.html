@@ -1,0 +1,16 @@
+<div class = "well" id="friendlist">
+	<h3> Friend List </h3><br>
+	<div align = "center"><input type="text" ng-model="q" placeholder="Filter Friends..." style="width:70%"></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="friend in friends | filter:q as results" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> <a href="#viewprofile/{{friend.id}}">{{friend.name}} </a> </strong>
+		      <div align = "right">
+		      <input type="submit" class= "page-scroll btn btn-md" name="frequest" ng-click ="submit(buildingdetails)" value="Unfriend"/>
+		      </div></p>
+		    </li>
+		    <li class="friend-repeat" ng-if="results.length == 0">
+		      <strong>No results found...</strong>
+		    </li>
+	  	</ul>
+</div>

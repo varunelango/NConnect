@@ -1,0 +1,45 @@
+<div class = "well" id="friendlist">
+	<h3> Pending Friend Request </h3><br>
+	<div align = "center"><input type="text" ng-model="q" placeholder="Filter Friends..." style="width:70%"></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="friend in friends | filter:q as results" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{friend.name}} </strong>
+		      <div align = "right"><input type="submit" class= "page-scroll btn btn-md" name="frequest" ng-click ="approve(friend.userid)" value="Accept"/>
+		      <input type="submit" class= "page-scroll btn btn-md" name="frequest" ng-click ="reject(friend.userid)" value="Decline"/>
+		      </div></p>
+		    </li>
+		    <li class="friend-repeat" ng-if="results.length == 0">
+		      <strong>----Empty----</strong>
+		    </li>
+	  	</ul>
+</div>
+<div class = "well" id="friendlist">
+	<h3> Sent Friend Requests </h3><br>
+	<div align = "center"><input type="text" ng-model="q2" placeholder="Filter Friends..." style="width:70%"/></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="req in requested | filter:q2 as results2" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{req.name}} </strong>
+		    </li>
+		    <li class="friend-repeat" ng-if="results2.length == 0">
+		      <strong>----Empty----</strong>
+		    </li>
+	  	</ul>
+</div>
+<div class = "well" id="friendlist">
+	<h3> Make New Friends</h3><br>
+	<div align = "center"><input type="text" ng-model="q3" placeholder="Filter Friends..." style="width:70%"/></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="frnd in newlist | filter:q3 as results3" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{frnd.name}} </strong>
+		    	<div align = "right"><input type="submit" class= "page-scroll btn btn-md" name="frequest" ng-click ="frequest(frnd.userid)" value="Send Request"/>
+		    </li>
+		    <li class="friend-repeat" ng-if="results3.length == 0">
+		      <strong>----Empty----</strong>
+		    </li>
+	  	</ul>
+</div>
+
+ 

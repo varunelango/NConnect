@@ -1,0 +1,19 @@
+<div class = "well" id="friendlist" ng-repeat= "profile in profiles">
+	<h3> <p class="uppercase">{{profile.name}}</p></h3>
+	<img ng-src="{{profile.imageUrl}}" class="img-circle" alt="Cinque Terre" width="100" height="80" >
+	<br><br>
+	<form class="form" ng-submit="login()">
+	    <div class="form-group">
+	      <label>Description</label><br>
+	      {{profile.description}}
+	    </div>
+	    <div class="form-group">
+	      <label>Interest</label><br>
+	        {{profile.interest}}
+	    </div>
+  		<div class="form-group">
+	      <label>DOB</label><br>
+	        {{profile.dob}}
+	    </div>
+  </form>
+</div>

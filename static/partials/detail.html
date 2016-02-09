@@ -1,0 +1,21 @@
+<div class="clearfix">
+	<div> 
+		<div ng-repeat="p in posts">
+			<h3>{{p.subject}}</h3>
+			<p>{{p.content}}</p>
+			<div align="right"><small>Posted by {{p.uname}}</small></div>
+		</div>	
+		<div class="post" ng-repeat="cmt in comments" ng-class-odd="'odd'" ng-class-even="'even'"> 
+			<p> {{cmt.comment}}
+			<small class="pull-right">{{cmt.datetime}}</small></p>
+			<small>{{cmt.username}}</small>
+		</div>	
+		<br>
+		<div class="col-md-10"> 
+			<input type = "text" name= "newcmt" placeholder="New Comments" ng-model="newcmt" style= "width : 100%">
+		</div>
+		<div class="col-md-2"> 
+			<input type="submit" id="newcmt" class= "page-scroll btn btn-sm" name="submitnewcmt" ng-click ="addcmt()" value="Comment !">
+		</div>
+	</div>
+</div>

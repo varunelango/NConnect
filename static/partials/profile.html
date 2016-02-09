@@ -1,0 +1,33 @@
+<div>
+<h3> Profile Details </h3> <img ng-src="{{profile.imageUrl}}" class="img-circle" width="70" height="60" ><br><br>
+	<form class="form" >
+		    <div>
+			    <input type="file" file-model="myFile"/>
+			    <button ng-click="uploadFile()">upload me</button>
+			</div>
+	</form>
+
+		    <div class="form-group">
+		      <label>Description</label><br>
+		       <textarea type="text" rows="3" class="form-control" name="description" ng-model = "Profile.description" placeholder="Description" value="{{profile.description}}"></textarea>
+		    </div>
+	  		<div class="form-group">
+		      <label>Interest</label><br>
+		        <input type="text" name="interest" value="{{profile.interest}}"  placeholder="Interest">
+		    </div>
+		    <div class="form-group">
+		      <label>DOB</label><br>
+		        <input type="text" ng-model="Profile.DOB" name ="DOB" value="{{profile.dob}}"  placeholder="DOB">
+		    </div>
+		    <div class="form-group">
+		      <label>Address</label><br>
+		        <input type="text" ng-model="Profile.door" value="{{door}}"  placeholder="Door" required> 
+				<input type="text" ng-model="apt" value="{{apt}}"  placeholder="Apt" required>
+				<input type="text" ng-model="Profile.street" value="{{street}}"  placeholder="Street" required> 
+				<input type="text" ng-model="Profile.city" name="city"  value="{{city}}"  placeholder="City" required> 
+				<input type="text" ng-model="Profile.state" name="state"  value="{{state}}"  placeholder="State" required> 
+				<input type="text" ng-model="Profile.zip" name="zip"  value="{{profile.zip}}"  placeholder="Zip" required>
+		    </div>
+			<input type="submit" id="search" class= "page-scroll btn btn-md" name="submitA" data-ng-click ="submit(buildingdetails)" value="Update"/>
+		</div>
+</div>

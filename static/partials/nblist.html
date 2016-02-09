@@ -1,0 +1,27 @@
+<div class = "well" id="friendlist">
+	<h3> Added Neighbor List </h3><br>
+	<div align = "center"><input type="text" ng-model="q" placeholder="Filter.." style="width:50%"></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="nblists in nbs | filter:q as results" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{nblists.name}} </strong></p>
+		    </li>
+		    <li class="friend-repeat" ng-if="results.length == 0">
+		      <strong>-----EMPTY-----</strong>
+		    </li>
+	  	</ul>
+</div>
+<div class = "well" id="friendlist">
+	<h3> Suggested Neighbor List </h3><br>
+	<div align = "center"><input type="text" ng-model="q" placeholder="Filter.." style="width:50%"></div>
+	<br><br>
+		<ul id="frindlist">
+		    <li class="friend-repeat" ng-repeat="nblist in nb | filter:q as results" ng-class-odd="'odd'" ng-class-even="'even'">
+		    	<p class="uppercase"><strong> {{nblist.name}} </strong></p>
+		    	<div align = "right"><input type="submit" class= "page-scroll btn btn-md" name="addit" ng-click ="addnb(nblist.uid)" value="Add"/>
+		    </li>
+		    <li class="friend-repeat" ng-if="results.length == 0">
+		      <strong>No results found...</strong>
+		    </li>
+	  	</ul>
+</div>
